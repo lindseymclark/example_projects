@@ -1,7 +1,7 @@
 Jet Engine Failure Study
 ==============================
 
-The study of jet engine failure
+The study of jet engine failure. The objective of the competition is to predict the number of remaining operational cycles before failure in the test set, i.e., the number of operational cycles after the last cycle that the engine will continue to operate. Also provided a vector of true Remaining Useful Life (RUL) values for the test data.
 
 Project Organization
 ------------
@@ -54,8 +54,31 @@ Project Organization
 
 --------
 
+# Project Description 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 
-## References
+- Reproducibility
+- Scalability
+
+
+# API reference
+
 https://data.nasa.gov/Aerospace/CMAPSS-Jet-Engine-Simulated-Data/ff5v-kuh6
+
+# Authors
+
+Lindsey Clark, 2023
+
+# Demo
+
+# Notes
+Initial EDA revealed that sensors 2, 3, 7, 14, and 16 change substantially over the course of the cycles. These will be isolated for initial modeling.
+
+# License
+
+# Logo
+
+## References
+
+https://hackernoon.com/how-to-create-an-engaging-readme-for-your-data-science-project-on-github
 
