@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test-split
+import numpy as np
 
 class MakeDataSet:
     def __int__(self, name):
@@ -37,3 +37,27 @@ class MakeDataSet:
                      21: "SensorMeasurement16", 22: "SensorMeasurement17", 23: "SensorMeasurement18",
                      24: "SensorMeasurement19", 25: "SensorMeasurement20"})
         data = data.drop([26, 27], axis=1)
+        return data
+        
+    def combine_engine_failure_data(data: pd.DataFrame, failure_data: str) -> pd.DataFrame:
+        """This function loads the outcome data for failure cycle and combines it with the sensor measurements.
+        
+        :param data: the sensor data 
+        :type data: pd.DataFrame
+        :param file: the file name and path for jet engine failure cycle
+        :type file: str
+        ...
+        :return: dataframe of the combined raw data
+        :rtype: pd.DataFrame
+        """
+        filename = '../data/external/' + failure_data
+        failure_cycle_data = pd.read_csv(filename, sep=" ", header=None)
+        failure_cycle_data = failure_cycle_data.drop([1], axis=1)
+        failure_cycle_data = failure_cycle_data.rename(columns={0: "FailureCycle"})
+        failure_cycle_data.index = np.arange(1, len(failure_cycle_data) + 1)
+        failure_cycle_data['Unit'] = failure_cycle_data.index
+        failure_cycle_data = failure_cycle_data.reset_index()
+
+        final_dataset = data.merge(failure_cycle_data, left_on='UnitNumber', right_on='Unit')
+        final_dataset = final_dataset.drop(['index', 'Unit'], axis=1)
+        return final_dataset
