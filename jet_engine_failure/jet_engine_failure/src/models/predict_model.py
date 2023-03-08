@@ -7,18 +7,17 @@ class LinearPredict():
         self.name = name
         
     def predict_unseen_data(filename, dataforregression_final: pd.DataFrame):
-         """This applies an synthetic minority oversampling technique (SMOTE) for outcomes of low prevelance.
+        """This applies an synthetic minority oversampling technique (SMOTE) for outcomes of low prevelance.
 
-        :param X_train: the independent variables
-        :type X_train: pd.DataFrame
-        :param y_train: the depdendent variable
-        :type y_train: list
+        :param filename: the pickled model
+        :type filename: object
+        :param dataforregression_final: the unseen data
+        :type dataforregression_final: pd.DataFrame
         ...
-        :return: dataframe of raw data
+        :return: dataframe of predicted data
         :rtype: pd.DataFrame
         """
         X = dataforregression_final[["sensor2", "sensor3", "sensor7", "sensor14", "sensor16"]]
-        #print
         X = sm.add_constant(X)
         saved_model = sm.load(filename)
         ypred = saved_model.predict(X) 
