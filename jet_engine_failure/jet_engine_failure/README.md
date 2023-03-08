@@ -63,6 +63,12 @@ Why a scaffold/project template?
 - Scalability
 - Modularity
 
+Agenda
+
+1. Review cookiecutters
+2. Talk about documentation!
+3. Review an example of moving from a notebook to a cookiecutter/scaffold structure
+
 
 # API reference/Data Source
 
@@ -72,14 +78,12 @@ https://data.nasa.gov/Aerospace/CMAPSS-Jet-Engine-Simulated-Data/ff5v-kuh6
 
 Lindsey Clark, 2023
 
-# Demo
-
 # Notes
 Initial EDA revealed that sensors 2, 3, 7, 14, and 16 change substantially over the course of the cycles. These will be isolated for initial modeling.
 
 # License
 
-# Logo
+None
 
 ## References
 
@@ -87,5 +91,8 @@ https://hackernoon.com/how-to-create-an-engaging-readme-for-your-data-science-pr
 
 https://towardsdatascience.com/automate-the-structure-of-your-data-science-projects-with-cookiecutter-937b244114d8
 
+https://arxiv.org/pdf/2008.10740.pdf
 
+https://www.markdownguide.org/cheat-sheet/
 
+https://learn.microsoft.com/en-us/azure/architecture/data-science-process/overview
